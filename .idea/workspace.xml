@@ -13,13 +13,20 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:Jayant_Frameworks" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:org_remote" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:org_remote" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:org_remote/develop" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ce17bb5-917e-4944-b2e2-fd63e43cf541" name="Default Changelist" comment="POM Updated with IO &amp; Info Dependencies and Comments addressed to each" />
+    <list default="true" id="154f02d4-7deb-4927-81ce-26b393ccbc43" name="Default Changelist" comment="Adding architecture" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="remote" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -53,6 +60,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1d8DgeP9daHURkbKK0EKsUIHvS1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -63,7 +71,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/StepDefinations" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
@@ -150,9 +158,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="POM Updated with IO &amp; Info Dependencies and Comments addressed to each" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="440" y="114" key="#Project_Structure" timestamp="1591976775956">
-      <screen x="0" y="0" width="1920" height="1080" />
+    <state x="313" y="0" key="#Project_Structure" timestamp="1592755671851">
+      <screen x="0" y="0" width="1366" height="728" />
     </state>
+    <state x="313" y="0" key="#Project_Structure/0.0.1366.728@0.0.1366.728" timestamp="1592755671851" />
     <state x="440" y="114" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1591976775956" />
     <state x="693" y="228" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1591941689763">
       <screen x="0" y="0" width="1920" height="1080" />
