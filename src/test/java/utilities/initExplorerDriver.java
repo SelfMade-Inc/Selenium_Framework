@@ -2,7 +2,7 @@ package utilities;
 
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-public class IEDriver extends DriverInstant {
+public class initExplorerDriver extends initWebDriver {
 
     void setDriver(){
 

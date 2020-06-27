@@ -1,6 +1,6 @@
 package utilities;
 
-public class ChromeDriver extends DriverInstant {
+public class initChromeDriver extends initWebDriver {
 
     void setDriver(){
 

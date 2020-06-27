@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 
-public class DriverInstant extends Logs  {
+public class initWebDriver extends initLogs {
 
     public static WebDriver driver;
     public static String url;
@@ -15,18 +15,18 @@ public class DriverInstant extends Logs  {
     public static void setDriver(String s) {
 
         if (s.equals("Chrome")) {
-            DriverInstant C = new ChromeDriver();
-            ChromeDriver C1 = (ChromeDriver) C;
+            initWebDriver C = new initChromeDriver();
+            initChromeDriver C1 = (initChromeDriver) C;
             C1.setDriver();
         }
         if (s.equals("IE")) {
-            DriverInstant IE = new IEDriver();
-            IEDriver IE1 = (IEDriver) IE;
+            initWebDriver IE = new initExplorerDriver();
+            initExplorerDriver IE1 = (initExplorerDriver) IE;
             IE1.setDriver();
         }
         if (s.equals("Firefox")) {
-            DriverInstant F = new FirefoxDriver();
-            FirefoxDriver F1 = (FirefoxDriver) F;
+            initWebDriver F = new initFirefoxDriver();
+            initFirefoxDriver F1 = (initFirefoxDriver) F;
             F1.setDriver();
         }
     }

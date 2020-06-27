@@ -1,6 +1,6 @@
 package utilities;
 
-public class FirefoxDriver extends DriverInstant {
+public class initFirefoxDriver extends initWebDriver {
 
     void setDriver() {
 

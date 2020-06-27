@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Framework3.0" />
+        <module name="Selenium_Framework 1" />
         <module name="JAVA_Selenium" />
       </profile>
     </annotationProcessing>

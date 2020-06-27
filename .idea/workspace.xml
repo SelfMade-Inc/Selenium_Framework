@@ -13,13 +13,35 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:Jayant_Frameworks" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:org_upstream" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:org_upstream" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:org_upstream/develop" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ce17bb5-917e-4944-b2e2-fd63e43cf541" name="Default Changelist" comment="POM Updated with IO &amp; Info Dependencies and Comments addressed to each" />
+    <list default="true" id="5ce17bb5-917e-4944-b2e2-fd63e43cf541" name="Default Changelist" comment="POM Updated with IO &amp; Info Dependencies and Comments addressed to each">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/LogTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/testLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dncast.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/sample.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Features/HomePage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Features/navi_HomePage.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Features/cukes_trials.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Features/cucumber_trial.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/Runner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/testRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinations/HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinations/navi_HomePage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/ChromeDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/initChromeDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/DriverInstant.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/initWebDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/FirefoxDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/initFirefoxDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/IEDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/initExplorerDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/Logs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/initLogs.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +75,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1d8DgeP9daHURkbKK0EKsUIHvS1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -76,8 +99,8 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="Runner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="JAVA_Selenium" />
+    <configuration name="testRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Selenium_Framework 1" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Runner.*" />
@@ -85,7 +108,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Runner" />
-      <option name="MAIN_CLASS_NAME" value="Runner.Runner" />
+      <option name="MAIN_CLASS_NAME" value="Runner.testRunner" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -93,7 +116,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Runner" />
+        <item itemvalue="JUnit.testRunner" />
       </list>
     </recent_temporary>
   </component>
@@ -102,7 +125,7 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5ce17bb5-917e-4944-b2e2-fd63e43cf541" name="Default Changelist" comment="" />
+      <changelist id="154f02d4-7deb-4927-81ce-26b393ccbc43" name="Default Changelist" comment="Adding architecture" />
       <created>1591797938921</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -137,7 +160,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="org_upstream/develop" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -158,6 +193,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="693" y="228" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1591941689763" />
+    <state x="762" y="232" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593233209025">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="762" y="232" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593233209025" />
     <state x="706" y="384" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1591941670387">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
