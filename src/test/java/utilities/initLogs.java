@@ -6,6 +6,6 @@ import org.apache.logging.log4j.Logger;
 
 public class initLogs {
 
-    public  static Logger log = LogManager.getLogger(initLogs.class.getName());
+    public static Logger log = LogManager.getLogger(initLogs.class.getName());
 
 }

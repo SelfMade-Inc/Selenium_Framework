@@ -33,10 +33,11 @@ public class NavigateHome extends initWebDriver {
     }
 
     @After
-    public void closeBrowser(){
+    public void closeBrowser() {
         driver.quit();
         System.out.println("After");
     }
+
     @Given("^User navigates to Webpage$")
     public void user_navigates_to_Webpage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions

@@ -24,11 +24,11 @@ public class WriteFile {
         XSSFSheet sheet = workbook.createSheet("First sheet");
 
         //Create row
-        for(int rows = 0; rows <= 10; rows++){
+        for (int rows = 0; rows <= 10; rows++) {
             XSSFRow row = sheet.createRow(rows);
 
             //Create cell
-            for(int cols = 0; cols <= rows; cols++){
+            for (int cols = 0; cols <= rows; cols++) {
                 XSSFCell cell = row.createCell(cols);
 
                 //Write to cell
@@ -47,8 +47,7 @@ public class WriteFile {
 
             //Closing the IO Stream
             op_stream.close();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
     }
@@ -58,7 +57,7 @@ public class WriteFile {
 
         //Creating a File object to reference the File class
 
-        try{
+        try {
             //To create specific fileformat just change the extension
             File txt_file = new File("src/main/Class Templates/WriteFile_output.txt");
 
@@ -69,16 +68,15 @@ public class WriteFile {
             BufferedWriter buf_writer = new BufferedWriter(file_write);
 
             //Write into text file
-                for(int i = 0; i< 5;i++) {
-                    for (int j = 0; j < 5; j++) {
-                        buf_writer.write("First Line into the file");
-                        int num = (int) (Math.random() * 100);
-                        buf_writer.write(num + "\t"); //t after each entry to insert tab
-                    }
+            for (int i = 0; i < 5; i++) {
+                for (int j = 0; j < 5; j++) {
+                    buf_writer.write("First Line into the file");
+                    int num = (int) (Math.random() * 100);
+                    buf_writer.write(num + "\t"); //t after each entry to insert tab
+                }
                 buf_writer.newLine();
             }
-        }
-        catch (Exception e){
+        } catch (Exception e) {
             System.out.println(e);
         }
 
@@ -89,27 +87,25 @@ public class WriteFile {
 
         //Creating a File object to reference the File class
 
-        try{
-        //To create specific fileformat just change the extension
-        File csv_file = new File("WriteFile_output.csv");
+        try {
+            //To create specific fileformat just change the extension
+            File csv_file = new File("WriteFile_output.csv");
 
-        //Object reference for FileWriter constructor class
-        FileWriter file_write = new FileWriter(csv_file, true); //True enables File updating after creation
-        //Object reference for BufferedWriter constructor class
-        BufferedWriter buf_writer = new BufferedWriter(file_write);
+            //Object reference for FileWriter constructor class
+            FileWriter file_write = new FileWriter(csv_file, true); //True enables File updating after creation
+            //Object reference for BufferedWriter constructor class
+            BufferedWriter buf_writer = new BufferedWriter(file_write);
 
-        //Write into csv file
-            for(int i = 0; i< 5;i++)
-            {
+            //Write into csv file
+            for (int i = 0; i < 5; i++) {
                 for (int j = 0; j < 5; j++) {
                     buf_writer.write("First Line into the file");
                     int num = (int) (Math.random() * 100);
                     buf_writer.write(num + ","); //, after each entry to insert comma
                 }
-            buf_writer.newLine();
-        }
-        }
-        catch(Exception e){
+                buf_writer.newLine();
+            }
+        } catch (Exception e) {
             System.out.println(e);
         }
     }

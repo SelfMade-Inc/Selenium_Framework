@@ -2,7 +2,7 @@ import java.io.*;
 
 public class ReadFile {
 
-    public void ReadAnyFile(){
+    public void ReadAnyFile() {
         //Start IO Stream
 
         //Creating a File object to reference the File class
@@ -11,8 +11,8 @@ public class ReadFile {
         File csv_file = new File("WriteFile_output.csv");
         File html_file = new File("WriteFile_output.html");
 
-            //Object reference for FileReader constructor class
-        try{
+        //Object reference for FileReader constructor class
+        try {
             FileReader file_reader = new FileReader(txt_file);
 
             //Object reference for BufferedReader constructor class
@@ -20,16 +20,15 @@ public class ReadFile {
 
             //Read entire text file
             String line = null;
-            while ((line == buf_reader.readLine())){
+            while ((line == buf_reader.readLine())) {
 
                 //Reads single line specified as parameter value
                 System.out.println(line);
 
             }
             //Close stream
-                buf_reader.close();
-        }
-        catch(IOException e){
+            buf_reader.close();
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }

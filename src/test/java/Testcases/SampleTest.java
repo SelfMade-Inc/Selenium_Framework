@@ -7,7 +7,7 @@ import java.io.IOException;
 public class SampleTest {
 
     public static void main(String[] args) throws IOException {
-initWebDriver.Go();
+        initWebDriver.Go();
 
     }
 

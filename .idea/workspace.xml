@@ -27,31 +27,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ce17bb5-917e-4944-b2e2-fd63e43cf541" name="Default Changelist" comment="Ading Template classes for ReadWrite flows with filetypes">
-      <change afterPath="$PROJECT_DIR$/src/main/java/ReadFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WriteFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WriteFile_output.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WriteFile_output.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/WriteFile_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/testLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestLog.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Features/navi_HomePage.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Features/NavigateHome.feature" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/testRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinations/navi_HomePage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinations/NavigateHome.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/SampleTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/LogTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/dncast.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/sample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Runner/Runner.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/StepDefinations/HomePage.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/Testcases/test.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/ChromeDriver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/DriverInstant.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/FirefoxDriver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/IEDriver.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/utilities/Logs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ReadFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ReadFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/TestLog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/TestLog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WriteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/WriteFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Features/NavigateHome.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Features/NavigateHome.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Runner/TestRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/StepDefinations/NavigateHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/StepDefinations/NavigateHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/Testcases/SampleTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Testcases/SampleTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/initChromeDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/initChromeDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/initExplorerDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/initExplorerDriver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/initLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/initLogs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/resources/Input.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/resources/Input.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +58,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="remote" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -179,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593233563421</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Ading Template classes for ReadWrite flows with filetypes">
+      <created>1593258469622</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1593258469622</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -270,10 +264,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="851" y="148" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593252276212" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1591979941242">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1593258584495">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1591979941242" />
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593258584495" />
     <state x="764" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591979760400">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
