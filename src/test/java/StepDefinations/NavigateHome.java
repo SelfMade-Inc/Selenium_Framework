@@ -9,7 +9,7 @@ import utilities.initWebDriver;
 
 import java.io.IOException;
 
-public class navi_HomePage extends initWebDriver {
+public class NavigateHome extends initWebDriver {
 
     @Before
     public void Run() throws IOException {
