@@ -1,5 +1,9 @@
 /mvn_repo_local/**
 /JAVA_Selenium/**
+<<<<<<< HEAD
 /.idea/**
 /target/**
 /screenshots/**
+=======
+/.idea/**
+>>>>>>> 659e9967719ee2979ae7520f0809ecec161c6b78
