@@ -82,8 +82,8 @@ public class EmailConfig {
     {
         public PasswordAuthentication getPasswordAuthenticated()
         {
-            String username = TestConfig.from_addr;
-            String password = TestConfig.password;
+            String username = ConnectivityConfig.from_addr;
+            String password = ConnectivityConfig.password;
             return new PasswordAuthentication(username, password);
         }
     }
@@ -250,7 +250,7 @@ public class EmailConfig {
 
         //To send a mail
         EmailConfig mailGenerator = new EmailConfig ();
-        mailGenerator.InitMail (TestConfig.server, TestConfig.from_addr, TestConfig.to_addr, TestConfig.subject_body,TestConfig.message_body,TestConfig.attachment_path,TestConfig.attachment_name);
+        mailGenerator.InitMail (ConnectivityConfig.server, ConnectivityConfig.from_addr, ConnectivityConfig.to_addr, ConnectivityConfig.subject_body,ConnectivityConfig.message_body,ConnectivityConfig.attachment_path,ConnectivityConfig.attachment_name);
 
     }*/
 }

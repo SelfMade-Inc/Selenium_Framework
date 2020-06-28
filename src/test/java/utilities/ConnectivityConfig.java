@@ -1,6 +1,6 @@
 package utilities;
 
-public class TestConfig{
+public class ConnectivityConfig {
 
     public static String server="smtp.gmail.com";
     public static String from_addr = "sender_email@domain.com";

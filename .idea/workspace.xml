@@ -26,22 +26,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ce17bb5-917e-4944-b2e2-fd63e43cf541" name="Default Changelist" comment="Adding EverythingExcel&#10;* Methods on readExcel for POI repo ver4.0.0 and before&#10;* Methods on readExcel for POI repo ver4.1.0 and after&#10;&#10;* Methods on writeExcel for POI repo ver4.0.0 and before&#10;* Methods on writeExcel for POI repo ver4.1.0 and after">
-      <change afterPath="$PROJECT_DIR$/src/main/java/EverythingExcel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/classTemplates/Logs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/classTemplates/ReadFile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j_template.xml" afterDir="false" />
+    <list default="true" id="5ce17bb5-917e-4944-b2e2-fd63e43cf541" name="Default Changelist" comment="Added EmailConfig.java">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Collections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/classTemplates/Collections.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ReadFile.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WriteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/classTemplates/WriteFile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WriteFile_output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/WriteFile_output.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WriteFile_output.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/WriteFile_output.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/WriteFile_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/WriteFile_output.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/EmailConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/EmailConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/TestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/ConnectivityConfig.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +82,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/classTemplates" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/StepDefinations" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
@@ -102,6 +92,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Selenium_Framework 1\src\test\java\utilities\resources" />
       <recent name="E:\Selenium_Framework 1\src\main\java\classTemplates" />
       <recent name="E:\Selenium_Framework 1\src\main\classTemplates" />
       <recent name="E:\Selenium_Framework 1\src\main\java" />
@@ -223,7 +214,21 @@
       <option name="project" value="LOCAL" />
       <updated>1593323609602</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Adding EverythingExcel&#10;* Methods on readExcel for POI repo ver4.0.0 and before&#10;* Methods on readExcel for POI repo ver4.1.0 and after&#10;&#10;* Methods on writeExcel for POI repo ver4.0.0 and before&#10;* Methods on writeExcel for POI repo ver4.1.0 and after">
+      <created>1593339714363</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1593339714363</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Added EmailConfig.java">
+      <created>1593351574509</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1593351574509</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -259,9 +264,14 @@
     <MESSAGE value="Added Collections.java with HashMap, HashSet and Set examples" />
     <MESSAGE value="Added Collections.java with HashMap examples" />
     <MESSAGE value="Adding EverythingExcel&#10;* Methods on readExcel for POI repo ver4.0.0 and before&#10;* Methods on readExcel for POI repo ver4.1.0 and after&#10;&#10;* Methods on writeExcel for POI repo ver4.0.0 and before&#10;* Methods on writeExcel for POI repo ver4.1.0 and after" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding EverythingExcel&#10;* Methods on readExcel for POI repo ver4.0.0 and before&#10;* Methods on readExcel for POI repo ver4.1.0 and after&#10;&#10;* Methods on writeExcel for POI repo ver4.0.0 and before&#10;* Methods on writeExcel for POI repo ver4.1.0 and after" />
+    <MESSAGE value="Added EmailConfig.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added EmailConfig.java" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="1300" y="402" key="#Notifications" timestamp="1593352291111">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1300" y="402" key="#Notifications/0.0.1920.1080@0.0.1920.1080" timestamp="1593352291111" />
     <state x="880" y="107" key="#Project_Structure" timestamp="1593248373522">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -282,14 +292,18 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="942" y="199" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593248463475" />
-    <state x="1192" y="404" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1593339317054">
+    <state x="1192" y="404" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1593348297356">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1192" y="404" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080@0.0.1920.1080" timestamp="1593339317054" />
+    <state x="1192" y="404" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080@0.0.1920.1080" timestamp="1593348297356" />
     <state x="762" y="232" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593233209025">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="762" y="232" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593233209025" />
+    <state x="1149" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1593349765375">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1149" y="286" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593349765375" />
     <state x="706" y="384" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1593251142205">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -322,14 +336,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="851" y="148" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593329838986" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1593323705633">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1593351594196">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593323705633" />
-    <state x="1211" y="317" key="chooseDestDirectoryDialog" timestamp="1593335227063">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593351594196" />
+    <state x="1211" y="317" key="chooseDestDirectoryDialog" timestamp="1593347422331">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1211" y="317" key="chooseDestDirectoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593335227063" />
+    <state x="1211" y="317" key="chooseDestDirectoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593347422331" />
     <state x="764" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591979760400">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -342,10 +356,14 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1132" y="273" width="575" height="534" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593269871474" />
-    <state x="1171" y="252" key="git4idea.branch.GitSmartOperationDialog" timestamp="1593323824054">
+    <state x="1171" y="252" key="git4idea.branch.GitSmartOperationDialog" timestamp="1593352044463">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1171" y="252" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593323824054" />
+    <state x="1171" y="252" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593352044463" />
+    <state x="1204" y="328" key="git4idea.merge.GitMergeDialog" timestamp="1593352283142">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1204" y="328" key="git4idea.merge.GitMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593352283142" />
     <state x="595" y="328" key="git4idea.merge.GitPullDialog" timestamp="1591979483198">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -354,6 +372,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="752" y="441" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1591979420949" />
+    <state x="1226" y="383" key="git4idea.ui.GitTagDialog" timestamp="1593352210655">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1226" y="383" key="git4idea.ui.GitTagDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593352210655" />
     <state x="685" y="200" key="new project wizard" timestamp="1591943333306">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
