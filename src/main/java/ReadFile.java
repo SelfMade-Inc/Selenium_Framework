@@ -1,3 +1,9 @@
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbookFactory;
+
 import java.io.*;
 
 public class ReadFile {
@@ -18,14 +24,19 @@ public class ReadFile {
             //Object reference for BufferedReader constructor class
             BufferedReader buf_reader = new BufferedReader(file_reader);
 
-            //Read entire text file
-            String line = null;
-            while ((line == buf_reader.readLine())) {
-
+            //Read entire text file in crude code and print line one at a time
+            String line = "";
+            while ((line = buf_reader.readLine())!=null) {
                 //Reads single line specified as parameter value
                 System.out.println(line);
-
             }
+
+            //Read & Write text file using one line while statement
+            while ((line = buf_reader.readLine())!=null) System.out.println(line);
+
+            //Read & Print line by line value using for each
+            buf_reader.lines().forEach(System.out::println);
+
             //Close stream
             buf_reader.close();
         } catch (IOException e) {
@@ -40,17 +51,37 @@ public class ReadFile {
         XSSF API = used for xlxs files
        */
 
-        //File input stream to pass and read data
-        File excel_file = new File("WriteFile_output.xlsx");
-        FileInputStream ip_stream = new FileInputStream(excel_file);
+        try {
+            //File input stream to read data
+            File excel_file = new File("WriteFile_output.xlsx");
+            FileInputStream ip_stream = new FileInputStream(excel_file);
 
-        //Get the sheet from workbook
-        //Workbook workbook =
+            //Initiate a workbook reader and read sheet names from workbook
+            Workbook workbook = XSSFWorkbookFactory.createWorkbook(ip_stream);
+            Sheet sheet = workbook.getSheetAt(0);
 
-        //Sheet sheet = workbook.getSheetAt(0);
-
-        //read the specified row and cell
-        //Row row = sheet.getRow(0);
-        //Cell cell = sheet.getCell(0);
+            //read the all row and cell wrt CellType
+            for(Row row_index : sheet){
+                for(Cell cell_index : row_index){
+                    switch (cell_index.getCellType()){
+                        case Cell.CELL_TYPE_STRING:
+                        System.out.println(cell_index.getStringCellValue());
+                        case Cell.CELL_TYPE_BLANK:
+                            System.out.println("Blank Cell located");
+                        case Cell.CELL_TYPE_BOOLEAN:
+                            System.out.println(cell_index.getBooleanCellValue());
+                        case Cell.CELL_TYPE_ERROR:
+                            System.out.println(cell_index.getErrorCellValue());
+                        case Cell.CELL_TYPE_NUMERIC:
+                            System.out.println(cell_index.getNumericCellValue());
+                        case Cell.CELL_TYPE_FORMULA:
+                            System.out.println(cell_index.getCellFormula());
+                    }
+                }
+            }
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
     }
 }

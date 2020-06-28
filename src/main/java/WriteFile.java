@@ -1,8 +1,7 @@
-import org.apache.poi.xssf.usermodel.XSSFCell;
-import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -24,21 +23,18 @@ public class WriteFile {
         XSSFSheet sheet = workbook.createSheet("First sheet");
 
         //Create row
-        for (int rows = 0; rows <= 10; rows++) {
-            XSSFRow row = sheet.createRow(rows);
+        for (int row_index = 0; row_index <= 10; row_index++) {
+            Row row = sheet.createRow(row_index);
 
-            //Create cell
-            for (int cols = 0; cols <= rows; cols++) {
-                XSSFCell cell = row.createCell(cols);
-
-                //Write to cell
-                //cell.(cols+" cell in "+rows+" row");
-
+            //Create and Write to cell
+            for (int col_index = 0; col_index <= row_index; col_index++) {
+                Cell cell = row.createCell(col_index);
+                cell.setCellValue("cell index " +col_index+ " of row index " +row_index );
             }
         }
 
+        //Creating File stream and init file path
         try {
-            //Creating File stream and init file path
             File excel_file = new File("WriteFile_output.xlsx");
             FileOutputStream op_stream = new FileOutputStream(excel_file);
 
@@ -46,8 +42,10 @@ public class WriteFile {
             workbook.write(op_stream);
 
             //Closing the IO Stream
-            op_stream.close();
-        } catch (Exception e) {
+            op_stream.flush(); //Used when the initReader will happen again
+            op_stream.close(); //Used when initReader will not happen again
+        }
+        catch (Exception e) {
             System.out.println(e);
         }
     }
@@ -56,7 +54,6 @@ public class WriteFile {
         //Start IO Stream
 
         //Creating a File object to reference the File class
-
         try {
             //To create specific fileformat just change the extension
             File txt_file = new File("src/main/Class Templates/WriteFile_output.txt");
@@ -76,10 +73,14 @@ public class WriteFile {
                 }
                 buf_writer.newLine();
             }
+
+            //Closing the writer after writing
+            buf_writer.flush(); //Used when the initReader will happen again
+            buf_writer.close(); //Used when initReader will not happen again
+
         } catch (Exception e) {
             System.out.println(e);
         }
-
     }
 
     public void WriteCSVFile() {
@@ -105,6 +106,11 @@ public class WriteFile {
                 }
                 buf_writer.newLine();
             }
+
+            //Closing the writer after writing
+            buf_writer.flush(); //Used when the initReader will happen again
+            buf_writer.close(); //Used when initReader will not happen again
+
         } catch (Exception e) {
             System.out.println(e);
         }
@@ -130,6 +136,11 @@ public class WriteFile {
                 int num = (int) (Math.random() * 100);
                 buf_writer.write("<html><body><title>Writing into an HTML file</title><h1>This marks the first line of the HTML file</h1></body></html>");
             }
+
+            //Closing the writer after writing
+            buf_writer.flush(); //Used when the initReader will happen again
+            buf_writer.close(); //Used when initReader will not happen again
+
         } catch (Exception e) {
             System.out.println(e);
         }
