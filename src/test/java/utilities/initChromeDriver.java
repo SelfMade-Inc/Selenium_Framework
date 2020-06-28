@@ -1,8 +1,8 @@
 package utilities;
 
-public class ChromeDriver extends DriverInstant {
+public class initChromeDriver extends initWebDriver {
 
-    void setDriver(){
+    void setDriver() {
 
         System.setProperty("webdriver.chrome.driver", "src\\test\\java\\utilities\\Resources\\Drivers\\ChromeDriver\\chromedriver1.exe");
         driver = new org.openqa.selenium.chrome.ChromeDriver();
