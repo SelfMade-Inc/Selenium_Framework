@@ -5,15 +5,15 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import utilities.DriverInstant;
+import utilities.initWebDriver;
 
 import java.io.IOException;
 
-public class HomePage extends DriverInstant {
+public class NavigateHome extends initWebDriver {
 
     @Before
     public void Run() throws IOException {
-        DriverInstant.Go();
+        initWebDriver.Go();
         System.out.println("Before");
     }
 
@@ -33,10 +33,11 @@ public class HomePage extends DriverInstant {
     }
 
     @After
-    public void closeBrowser(){
+    public void closeBrowser() {
         driver.quit();
         System.out.println("After");
     }
+
     @Given("^User navigates to Webpage$")
     public void user_navigates_to_Webpage() throws Throwable {
         // Write code here that turns the phrase above into concrete actions

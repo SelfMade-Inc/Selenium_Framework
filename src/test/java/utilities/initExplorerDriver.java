@@ -2,9 +2,9 @@ package utilities;
 
 import org.openqa.selenium.ie.InternetExplorerDriver;
 
-public class IEDriver extends DriverInstant {
+public class initExplorerDriver extends initWebDriver {
 
-    void setDriver(){
+    void setDriver() {
 
         System.setProperty("webdriver.ie.driver", "src\\test\\java\\utilities\\Resources\\Drivers\\IEDriver\\IEDriverServer.exe");
         driver = new InternetExplorerDriver();
