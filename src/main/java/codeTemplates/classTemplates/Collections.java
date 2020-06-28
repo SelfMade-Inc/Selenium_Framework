@@ -1,3 +1,5 @@
+package classTemplates;
+
 import java.util.*;
 
 public class Collections {

@@ -121,8 +121,9 @@
             <version>4.12</version>
         </dependency>
 
-        <!--Below dependency is used to get Log4j jar files-->
+        <!--Log4j and related jar files for Project level logs-->
         <!--The Apache Log4j Implementation-->
+
         <!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -137,7 +138,23 @@
             <version>2.12.1</version>
         </dependency>
 
-        <!--Allows checking for conditions in your code via existing matchers classes. It also allows you to define your custom matcher implementations. To use Hamcrest matchers in JUnit you use the assertThat statement-->
+        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/org.jetbrains/annotations -->
+        <dependency>
+            <groupId>org.jetbrains</groupId>
+            <artifactId>annotations</artifactId>
+            <version>19.0.0</version>
+        </dependency>
+
+        <!--Allows checking for conditions in your code via existing matchers classes.
+        It also allows you to define your custom matcher implementations.
+        To use Hamcrest matchers in JUnit you use the assertThat statement-->
         <!-- https://mvnrepository.com/artifact/org.hamcrest/hamcrest-core -->
         <dependency>
             <groupId>org.hamcrest</groupId>
@@ -158,21 +175,21 @@
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
-            <version>4.1.1</version>
+            <version>3.17</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml-schemas</artifactId>
-            <version>4.1.1</version>
+            <version>3.17</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-excelant -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-excelant</artifactId>
-            <version>4.1.1</version>
+            <version>3.17</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
@@ -189,6 +206,22 @@
             <version>3.1.0</version>
         </dependency>
 
-    </dependencies>
+        <!--Connectivity API repositories-->
+        <!--MYSQL connectivity-->
+        <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.19</version>
+        </dependency>
 
+        <!--Email connectivity-->
+        <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+        </dependency>
+
+    </dependencies>
 </project>
