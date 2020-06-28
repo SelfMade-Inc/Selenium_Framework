@@ -27,11 +27,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ce17bb5-917e-4944-b2e2-fd63e43cf541" name="Default Changelist" comment="Added EmailConfig.java">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/EmailConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/EmailConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/utilities/TestConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/utilities/ConnectivityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Collections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Collections.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593351574509</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Added EmailConfig.java">
+      <created>1593352315574</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1593352315574</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -336,10 +339,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="851" y="148" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593329838986" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1593351594196">
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1593352450443">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593351594196" />
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593352450443" />
     <state x="1211" y="317" key="chooseDestDirectoryDialog" timestamp="1593347422331">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -360,10 +363,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1171" y="252" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593352044463" />
-    <state x="1204" y="328" key="git4idea.merge.GitMergeDialog" timestamp="1593352283142">
+    <state x="1204" y="328" key="git4idea.merge.GitMergeDialog" timestamp="1593352351547">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1204" y="328" key="git4idea.merge.GitMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593352283142" />
+    <state x="1204" y="328" key="git4idea.merge.GitMergeDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593352351547" />
     <state x="595" y="328" key="git4idea.merge.GitPullDialog" timestamp="1591979483198">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
