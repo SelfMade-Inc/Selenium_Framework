@@ -1,3 +1,4 @@
 /mvn_repo_local/**
 /JAVA_Selenium/**
 /.idea/**
+/target/**

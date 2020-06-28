@@ -13,20 +13,36 @@
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:org_remote" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:org_upstream" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
     <select>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="GROUP_NODE:org_remote" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:org_remote/develop" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:org_upstream" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:org_upstream/develop" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ce17bb5-917e-4944-b2e2-fd63e43cf541" name="Default Changelist" comment="Added Collections.java with HashMap, HashSet and Set examples" />
+    <list default="true" id="5ce17bb5-917e-4944-b2e2-fd63e43cf541" name="Default Changelist" comment="Adding EverythingExcel&#10;* Methods on readExcel for POI repo ver4.0.0 and before&#10;* Methods on readExcel for POI repo ver4.1.0 and after&#10;&#10;* Methods on writeExcel for POI repo ver4.0.0 and before&#10;* Methods on writeExcel for POI repo ver4.1.0 and after">
+      <change afterPath="$PROJECT_DIR$/src/main/java/EverythingExcel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/classTemplates/Logs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/classTemplates/ReadFile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j_template.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Collections.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/classTemplates/Collections.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ReadFile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WriteFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/classTemplates/WriteFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WriteFile_output.csv" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/WriteFile_output.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WriteFile_output.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/WriteFile_output.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/WriteFile_output.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/codeTemplates/WriteFile_output.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/log4j2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/log4j2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/log4j2.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +54,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="FxmlFile" />
         <option value="Class" />
       </list>
     </option>
@@ -75,24 +92,45 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/classTemplates" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/test/java/StepDefinations" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Selenium_Framework 1\src\main\java\classTemplates" />
+      <recent name="E:\Selenium_Framework 1\src\main\classTemplates" />
+      <recent name="E:\Selenium_Framework 1\src\main\java" />
+      <recent name="E:\Selenium_Framework 1\src\main\Class Templates" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="E:\Java_Selenium Workspace\JAVA_Selenium\src\test\java\StepDefinations" />
       <recent name="E:\Java_Selenium Workspace\JAVA_Selenium\src\test\java\Features" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="E:\Selenium_Framework 1\src\main\java" />
-      <recent name="E:\Selenium_Framework 1\src\main\Class Templates" />
-    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.Runner">
+    <configuration name="Runner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JAVA_Selenium" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Runner.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Runner" />
+      <option name="MAIN_CLASS_NAME" value="Runner.Runner" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestRunner" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Selenium_Framework 1" />
       <extension name="coverage">
@@ -110,6 +148,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestRunner" />
+        <item itemvalue="JUnit.Runner" />
+        <item itemvalue="JUnit.TestRunner" />
+        <item itemvalue="JUnit.Runner" />
         <item itemvalue="JUnit.TestRunner" />
       </list>
     </recent_temporary>
@@ -174,7 +216,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593319152499</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Added Collections.java with HashMap examples">
+      <created>1593323609602</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1593323609602</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -208,21 +257,23 @@
     <MESSAGE value="Ading Template classes for ReadWrite flows with filetypes" />
     <MESSAGE value="Updated POM to load Apache POI ver3.17" />
     <MESSAGE value="Added Collections.java with HashMap, HashSet and Set examples" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Collections.java with HashMap, HashSet and Set examples" />
+    <MESSAGE value="Added Collections.java with HashMap examples" />
+    <MESSAGE value="Adding EverythingExcel&#10;* Methods on readExcel for POI repo ver4.0.0 and before&#10;* Methods on readExcel for POI repo ver4.1.0 and after&#10;&#10;* Methods on writeExcel for POI repo ver4.0.0 and before&#10;* Methods on writeExcel for POI repo ver4.1.0 and after" />
+    <option name="LAST_COMMIT_MESSAGE" value="Adding EverythingExcel&#10;* Methods on readExcel for POI repo ver4.0.0 and before&#10;* Methods on readExcel for POI repo ver4.1.0 and after&#10;&#10;* Methods on writeExcel for POI repo ver4.0.0 and before&#10;* Methods on writeExcel for POI repo ver4.1.0 and after" />
   </component>
   <component name="WindowStateProjectService">
     <state x="880" y="107" key="#Project_Structure" timestamp="1593248373522">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="880" y="107" key="#Project_Structure/0.0.1920.1080@0.0.1920.1080" timestamp="1593248373522" />
-    <state x="1149" y="294" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1593238954674">
+    <state x="1149" y="294" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1593338044955">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1149" y="294" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593238954674" />
-    <state x="1150" y="315" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1593236756018">
+    <state x="1149" y="294" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593338044955" />
+    <state x="1150" y="315" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1593339314205">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="1150" y="315" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593236756018" />
+    <state x="1150" y="315" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593339314205" />
     <state x="693" y="228" key="#com.intellij.ide.util.frameworkSupport.AddFrameworkSupportDialog" timestamp="1591941689763">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -231,6 +282,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="942" y="199" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593248463475" />
+    <state x="1192" y="404" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1593339317054">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1192" y="404" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1920.1080@0.0.1920.1080" timestamp="1593339317054" />
     <state x="762" y="232" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593233209025">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -263,22 +318,34 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="490" y="194" key="Maven.ArtifactSearchDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593257752492" />
-    <state x="851" y="148" key="SettingsEditor" timestamp="1593266084065">
+    <state x="851" y="148" key="SettingsEditor" timestamp="1593329838986">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="851" y="148" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593266084065" />
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1593258584495">
+    <state x="851" y="148" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1593329838986" />
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2" timestamp="1593323705633">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593258584495" />
+    <state x="552" y="272" key="Vcs.Push.Dialog.v2/0.0.1920.1080@0.0.1920.1080" timestamp="1593323705633" />
+    <state x="1211" y="317" key="chooseDestDirectoryDialog" timestamp="1593335227063">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1211" y="317" key="chooseDestDirectoryDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593335227063" />
     <state x="764" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1591979760400">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="764" y="453" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1920.1080@0.0.1920.1080" timestamp="1591979760400" />
+    <state x="1149" y="301" key="extract.method.dialog" timestamp="1593331075234">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1149" y="301" key="extract.method.dialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593331075234" />
     <state x="1132" y="273" width="575" height="534" key="find.popup" timestamp="1593269871474">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1132" y="273" width="575" height="534" key="find.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593269871474" />
+    <state x="1171" y="252" key="git4idea.branch.GitSmartOperationDialog" timestamp="1593323824054">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1171" y="252" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1593323824054" />
     <state x="595" y="328" key="git4idea.merge.GitPullDialog" timestamp="1591979483198">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -295,5 +362,9 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="1075" y="252" key="run.anything.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593266361200" />
+    <state x="1082" y="239" width="672" height="678" key="search.everywhere.popup" timestamp="1593323448043">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1082" y="239" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1593323448043" />
   </component>
 </project>
