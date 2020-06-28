@@ -7,7 +7,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 
-public class initWebDriver extends Logs {
+public class initWebDriver extends initLogs {
 
     public static WebDriver driver;
     public static String url;
@@ -32,11 +32,13 @@ public class initWebDriver extends Logs {
     }
 
     public static void Go() throws IOException {
-        Properties props = new Properties();
-        FileInputStream ip_stream = new FileInputStream("src\\test\\java\\utilities\\Resources\\Input.properties");
-        props.load(ip_stream);
-        String browserName = props.getProperty("BrowserName");
-        url = props.getProperty("url");
+        Properties prop = new Properties();
+        FileInputStream fis = new FileInputStream("src\\test\\java\\utilities\\Resources\\Input.properties");
+        prop.load(fis);
+        String browserName = prop.getProperty("BrowserName");
+        url = prop.getProperty("url");
         setDriver(browserName);
+
+
     }
 }
