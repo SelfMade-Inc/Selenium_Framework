@@ -1,4 +1,4 @@
-package classTemplates;
+package codeTemplates.classTemplates;
 
 import java.util.*;
 
