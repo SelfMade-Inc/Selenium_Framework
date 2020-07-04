@@ -4,7 +4,9 @@ import java.util.*;
 
 public class Collections {
 
-    //Using HashSets
+    /*HashSet is an implementation of Set in which the elements are not sorted or ordered.
+    It is faster than a TreeSet.
+    The HashSet is an implementation of a Set.*/
     public void HashSets() {
 
         HashSet<String> strHashSet = new HashSet<String>();
@@ -14,7 +16,9 @@ public class Collections {
         System.out.println(strHashSet);
     }
 
-    //Using Sets
+    /*Set is a generic set of values with no duplicate elements.
+    A TreeSet is a set where the elements are sorted
+    Set is a parent interface of all set classes like TreeSet, HashSet, etc.*/
     public void Sets() {
 
         //'Set' is abstract and needs to be indirectly instantiated
