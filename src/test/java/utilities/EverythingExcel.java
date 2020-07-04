@@ -15,32 +15,31 @@ import java.util.stream.IntStream;
 
 public class EverythingExcel {
 
-    public  String file_path;
-    public  FileInputStream ip_stream = null;
-    public FileOutputStream op_stream =null;
+    public String file_path;
+    public FileInputStream ip_stream = null;
+    public FileOutputStream op_stream = null;
+    String cellText;
     private XSSFWorkbook workbook = null;
     private XSSFSheet sheet = null;
-    private XSSFRow row   =null;
+    private XSSFRow row = null;
     private XSSFCell cell = null;
-    String cellText;
 
     //Initiates the connection of IOStreams to the workbook
-    public void LoadExcel(String file_path){
+    public void LoadExcel(String file_path) {
 
         //THIS keyword is used to load Class level variable declarations to Method level parameters
         this.file_path = file_path;
         try {
-            ip_stream = new FileInputStream(file_path);
-            workbook = new XSSFWorkbook(ip_stream);
-            sheet = workbook.getSheetAt(0);
-            ip_stream.close();
-        }
-        catch (Exception e) {
-            e.printStackTrace();
+            ip_stream = new FileInputStream (file_path);
+            workbook = new XSSFWorkbook (ip_stream);
+            sheet = workbook.getSheetAt (0);
+            ip_stream.close ();
+        } catch (Exception e) {
+            e.printStackTrace ();
         }
     }
 
-/* Reading an Excel file */
+    /* Reading an Excel file */
     /*
     UpdatedReadExcel is for Repo files older than ver4.*.* and ReadExcel is for Repo files before 4.*.*
     */
@@ -54,76 +53,74 @@ public class EverythingExcel {
 
         try {
             //File input stream to read data
-            File excel_file = new File("WriteFile_output.xlsx");
-            ip_stream = new FileInputStream(excel_file);
+            File excel_file = new File ("WriteFile_output.xlsx");
+            ip_stream = new FileInputStream (excel_file);
 
             //Initiate a workbook reader and read sheet names from workbook
-            Workbook workbook = WorkbookFactory.create(ip_stream);
-            Sheet sheet = workbook.getSheetAt(0);
+            Workbook workbook = WorkbookFactory.create (ip_stream);
+            Sheet sheet = workbook.getSheetAt (0);
 
             //read the all row and cell wrt CellType
-            for(Row row_index : sheet){
-                for(Cell cell_index : row_index){
-                    switch (cell_index.getCellType()){
+            for (Row row_index : sheet) {
+                for (Cell cell_index : row_index) {
+                    switch (cell_index.getCellType ()) {
                         case Cell.CELL_TYPE_STRING:
-                            System.out.println(cell_index.getStringCellValue());
+                            System.out.println (cell_index.getStringCellValue ());
                         case Cell.CELL_TYPE_BLANK:
-                            System.out.println("Blank Cell located");
+                            System.out.println ("Blank Cell located");
                         case Cell.CELL_TYPE_BOOLEAN:
-                            System.out.println(cell_index.getBooleanCellValue());
+                            System.out.println (cell_index.getBooleanCellValue ());
                         case Cell.CELL_TYPE_ERROR:
-                            System.out.println(cell_index.getErrorCellValue());
+                            System.out.println (cell_index.getErrorCellValue ());
                         case Cell.CELL_TYPE_NUMERIC:
-                            System.out.println(cell_index.getNumericCellValue());
+                            System.out.println (cell_index.getNumericCellValue ());
                         case Cell.CELL_TYPE_FORMULA:
-                            System.out.println(cell_index.getCellFormula());
+                            System.out.println (cell_index.getCellFormula ());
                     }
                 }
             }
-        }
-        catch(Exception e){
-            System.out.println(e);
+        } catch (Exception e) {
+            System.out.println (e);
         }
     }
 
     //Reads the data from a cell with parameters as sheet name column name and row index
-    public String UpdatedReadExcel(String sheet_Name,String col_Name,int row_Index){
-        try{
-            if(row_Index <=0)
+    public String UpdatedReadExcel(String sheet_Name, String col_Name, int row_Index) {
+        try {
+            if (row_Index <= 0)
                 return "";
 
-            int index = workbook.getSheetIndex(sheet_Name);
-            int col_Index=-1;
-            if(index==-1)
+            int index = workbook.getSheetIndex (sheet_Name);
+            int col_Index = -1;
+            if (index == -1)
                 return "";
 
-            sheet = workbook.getSheetAt(index);
-            row=sheet.getRow(0);
+            sheet = workbook.getSheetAt (index);
+            row = sheet.getRow (0);
 
-            for(int i = 0; i < row.getLastCellNum(); i++){
+            for (int i = 0 ;i < row.getLastCellNum () ;i++) {
                 //Print the cell data to Console
-                System.out.println(row.getCell(i).getStringCellValue().trim());
+                System.out.println (row.getCell (i).getStringCellValue ().trim ());
 
-                if(row.getCell(i).getStringCellValue().trim().equals(col_Name.trim()))
-                    col_Index=i;
+                if (row.getCell (i).getStringCellValue ().trim ().equals (col_Name.trim ()))
+                    col_Index = i;
             }
 
-            if(col_Index==-1)
+            if (col_Index == -1)
                 return "";
 
-            sheet = workbook.getSheetAt(index);
-            row = sheet.getRow(row_Index-1);
+            sheet = workbook.getSheetAt (index);
+            row = sheet.getRow (row_Index - 1);
 
-            if(row == null)
+            if (row == null)
                 return "";
-            cell = row.getCell(col_Index);
+            cell = row.getCell (col_Index);
 
-            if(cell == null){
+            if (cell == null) {
                 return "";
-            }
-            else {
+            } else {
                 //Handles all Cell types
-                switch (cell.getCellTypeEnum()) {
+                switch (cell.getCellTypeEnum ()) {
                     case STRING:
                         System.out.println (cell.getRichStringCellValue ());
                         break;
@@ -136,16 +133,16 @@ public class EverythingExcel {
                     case NUMERIC:
                         System.out.println (cell.getNumericCellValue ());
                         //Handles date entries in Cells
-                        if (HSSFDateUtil.isCellDateFormatted(cell)) {
+                        if (HSSFDateUtil.isCellDateFormatted (cell)) {
 
-                            double d = cell.getNumericCellValue();
+                            double d = cell.getNumericCellValue ();
 
-                            Calendar cal =Calendar.getInstance();
-                            cal.setTime(HSSFDateUtil.getJavaDate(d));
+                            Calendar cal = Calendar.getInstance ();
+                            cal.setTime (HSSFDateUtil.getJavaDate (d));
                             cellText =
-                                    (String.valueOf(cal.get(Calendar.YEAR))).substring(2);
-                            cellText = cal.get(Calendar.DAY_OF_MONTH) + "/" +
-                                    cal.get(Calendar.MONTH)+1 + "/" +
+                                    (String.valueOf (cal.get (Calendar.YEAR))).substring (2);
+                            cellText = cal.get (Calendar.DAY_OF_MONTH) + "/" +
+                                    cal.get (Calendar.MONTH) + 1 + "/" +
                                     cellText;
                         }
                         break;
@@ -155,42 +152,40 @@ public class EverythingExcel {
                 }
                 return cellText;
             }
-        }
-        catch(Exception e){
-            e.printStackTrace();
-            return "row "+row_Index+" or column "+col_Name +" does not exist in xls";
+        } catch (Exception e) {
+            e.printStackTrace ();
+            return "row " + row_Index + " or column " + col_Name + " does not exist in xls";
         }
     }
 
     //Reads the data from a cell with parameters as Sheet name, Column index and row index
-    public String UpdatedReadExcel(String sheet_Name,int col_index,int row_index){
-        try{
-            if(row_index <=0)
+    public String UpdatedReadExcel(String sheet_Name, int col_index, int row_index) {
+        try {
+            if (row_index <= 0)
                 return "";
 
             //Verifies if sheet_name has any data
-            int index = workbook.getSheetIndex(sheet_Name);
-            if(index==-1)
+            int index = workbook.getSheetIndex (sheet_Name);
+            if (index == -1)
                 return "";
 
             //Returns row count from specified sheet
-            sheet = workbook.getSheetAt(index);
-            row = sheet.getRow(row_index-1);
-            if(row == null)
+            sheet = workbook.getSheetAt (index);
+            row = sheet.getRow (row_index - 1);
+            if (row == null)
                 return "";
 
             //Get cell count from specified row
-            cell = row.getCell(col_index);
-            if(cell==null)
+            cell = row.getCell (col_index);
+            if (cell == null)
                 return "";
 
             //Same as the switch implementation in getCellData
-            if(cell == null){
+            if (cell == null) {
                 return "";
-            }
-            else {
+            } else {
                 //Handles all Cell types
-                switch (cell.getCellTypeEnum()) {
+                switch (cell.getCellTypeEnum ()) {
                     case STRING:
                         System.out.println (cell.getRichStringCellValue ());
                         break;
@@ -203,16 +198,16 @@ public class EverythingExcel {
                     case NUMERIC:
                         System.out.println (cell.getNumericCellValue ());
                         //Handles date entries in Cells
-                        if (HSSFDateUtil.isCellDateFormatted(cell)) {
+                        if (HSSFDateUtil.isCellDateFormatted (cell)) {
 
-                            double d = cell.getNumericCellValue();
+                            double d = cell.getNumericCellValue ();
 
-                            Calendar cal =Calendar.getInstance();
-                            cal.setTime(HSSFDateUtil.getJavaDate(d));
+                            Calendar cal = Calendar.getInstance ();
+                            cal.setTime (HSSFDateUtil.getJavaDate (d));
                             cellText =
-                                    (String.valueOf(cal.get(Calendar.YEAR))).substring(2);
-                            cellText = cal.get(Calendar.DAY_OF_MONTH) + "/" +
-                                    cal.get(Calendar.MONTH)+1 + "/" +
+                                    (String.valueOf (cal.get (Calendar.YEAR))).substring (2);
+                            cellText = cal.get (Calendar.DAY_OF_MONTH) + "/" +
+                                    cal.get (Calendar.MONTH) + 1 + "/" +
                                     cellText;
                         }
                         break;
@@ -222,11 +217,10 @@ public class EverythingExcel {
                 }
                 return cellText;
             }
-        }
-        catch(Exception e){
+        } catch (Exception e) {
 
-            e.printStackTrace();
-            return "row "+row_index+" or column "+col_index +" does not exist  in xls";
+            e.printStackTrace ();
+            return "row " + row_index + " or column " + col_index + " does not exist  in xls";
         }
     }
 
@@ -235,18 +229,18 @@ public class EverythingExcel {
     */
 
     //Returns the row count in a sheet
-    public int getRowCount(String sheet_Name){
-        int index = workbook.getSheetIndex(sheet_Name);
-        if(index==-1)
+    public int getRowCount(String sheet_Name) {
+        int index = workbook.getSheetIndex (sheet_Name);
+        if (index == -1)
             return 0;
-        else{
-            sheet = workbook.getSheetAt(index);
-            int row_count = sheet.getLastRowNum()+1;
+        else {
+            sheet = workbook.getSheetAt (index);
+            int row_count = sheet.getLastRowNum () + 1;
             return row_count;
         }
     }
 
-/* Writing to an Excel file */
+    /* Writing to an Excel file */
 
     //addCellData here uses sheet name, column name and row index to write cell data in cellText or cellURL format
     public boolean addCellData(String sheet_Name, String col_Name, int row_index, String cellText, String cellUrl) {
@@ -335,7 +329,7 @@ public class EverythingExcel {
         return true;
     }
 
-/* Methods referencing Sheet actions */
+    /* Methods referencing Sheet actions */
 
     // Adding a sheet to existing Workbook
     public boolean addNewSheet(String sheet_name) {
@@ -384,7 +378,7 @@ public class EverythingExcel {
             return true;
     }
 
-/* Methods referencing actions on Rows and Columns */
+    /* Methods referencing actions on Rows and Columns */
 
     //Returns true if column is created successfully
     public boolean addColumn(String sheet_Name, String col_Name) {

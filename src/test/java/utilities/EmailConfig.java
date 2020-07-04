@@ -13,78 +13,73 @@ public class EmailConfig {
     public void InitMail(String mailServer, String from_addr, @org.jetbrains.annotations.NotNull String[] to_addr, String subject_body, String message_body) throws MessagingException, AddressException {
 
         //SMTP Server config
-        props.put("mail.smtp.starttls.enable", "true");
-        props.put("mail.smtp.EnableSSL.enable","true");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.host", mailServer);
-        props.put("mail.debug", "true");
+        props.put ("mail.smtp.starttls.enable", "true");
+        props.put ("mail.smtp.EnableSSL.enable", "true");
+        props.put ("mail.smtp.auth", "true");
+        props.put ("mail.smtp.host", mailServer);
+        props.put ("mail.debug", "true");
 
         //Establishing SMTP locally
-        props.setProperty("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        props.setProperty("mail.smtp.socketFactory.fallback", "false");
-        props.setProperty("mail.smtp.port", "465");
-        props.setProperty("mail.smtp.socketFactory.port", "465");
+        props.setProperty ("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.setProperty ("mail.smtp.socketFactory.fallback", "false");
+        props.setProperty ("mail.smtp.port", "465");
+        props.setProperty ("mail.smtp.socketFactory.port", "465");
 
 
-        Authenticator auth = new SMTPAuthenticator();
-        Session session = Session.getDefaultInstance(props, auth);
-        session.setDebug(debug);
+        Authenticator auth = new SMTPAuthenticator ();
+        Session session = Session.getDefaultInstance (props, auth);
+        session.setDebug (debug);
 
-        try
-        {
+        try {
             //Connecting to the SMTP server
-            Transport bus = session.getTransport("smtp");
-            bus.connect();
-            Message message = new MimeMessage(session);
+            Transport bus = session.getTransport ("smtp");
+            bus.connect ();
+            Message message = new MimeMessage (session);
 
             //X-Priority values are generally numbers like 1 (for highest priority), 3 (normal) and 5 (lowest).
-            message.addHeader("X-Priority", "1");
+            message.addHeader ("X-Priority", "1");
 
             //reading from config for Sender email address
-            message.setFrom(new InternetAddress(from_addr));
+            message.setFrom (new InternetAddress (from_addr));
 
             //reading from Receiver email address list and inserting in Email To
             InternetAddress[] addressTo = new InternetAddress[to_addr.length];
-            for (int i = 0; i < to_addr.length; i++)
-                addressTo[i] = new InternetAddress(to_addr[i]);
+            for (int i = 0 ;i < to_addr.length ;i++)
+                addressTo[i] = new InternetAddress (to_addr[i]);
 
-            message.setRecipients(Message.RecipientType .TO, addressTo);
-            message.setSubject(subject_body);
+            message.setRecipients (Message.RecipientType.TO, addressTo);
+            message.setSubject (subject_body);
 
             //Email body layout
-            BodyPart body = new MimeBodyPart();
+            BodyPart body = new MimeBodyPart ();
 
             // body.setText(messageBody);
-            body.setContent(message_body,"text/html");
+            body.setContent (message_body, "text/html");
 
             //BodyPart attachment = new MimeBodyPart();
             //DataSource source = new FileDataSource(attachmentPath);
             //attachment.setDataHandler(new DataHandler(source));
             //attachment.setFileName(attachmentName);
-            MimeMultipart multipart = new MimeMultipart();
-            multipart.addBodyPart(body);
+            MimeMultipart multipart = new MimeMultipart ();
+            multipart.addBodyPart (body);
             //multipart.addBodyPart(attachment);
-            message.setContent(multipart);
+            message.setContent (multipart);
 
             //Send message
-            Transport.send(message);
-            System.out.println("Sucessfully Sent mail to All Users");
-            bus.close();
+            Transport.send (message);
+            System.out.println ("Sucessfully Sent mail to All Users");
+            bus.close ();
 
-        }
-        catch (MessagingException mex)
-        {
-            mex.printStackTrace();
+        } catch (MessagingException mex) {
+            mex.printStackTrace ();
         }
     }
 
-    private class SMTPAuthenticator extends javax.mail.Authenticator
-    {
-        public PasswordAuthentication getPasswordAuthenticated()
-        {
+    private class SMTPAuthenticator extends javax.mail.Authenticator {
+        public PasswordAuthentication getPasswordAuthenticated() {
             String username = ConnectivityConfig.from_addr;
             String password = ConnectivityConfig.password;
-            return new PasswordAuthentication(username, password);
+            return new PasswordAuthentication (username, password);
         }
     }
 
