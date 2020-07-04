@@ -1,4 +1,4 @@
-package classTemplates;
+package codeTemplates.classTemplates;
 
 import org.apache.poi.hssf.usermodel.HSSFDateUtil;
 import org.apache.poi.ss.usermodel.*;

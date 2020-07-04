@@ -3,17 +3,14 @@ package utilities;
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.logging.Logs;
 
 import java.util.Date;
 
 public class initLogs {
 
-<<<<<<< HEAD:src/test/java/utilities/Logs.java
     //Instantiate Logger class from Org.Apache.Log4j
     public static Logger log = LogManager.getLogger(Logs.class.getName());
-=======
-    public static Logger log = LogManager.getLogger(initLogs.class.getName());
->>>>>>> 659e9967719ee2979ae7520f0809ecec161c6b78:src/test/java/utilities/initLogs.java
 
     public static void main(String[] args) {
 
