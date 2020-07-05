@@ -21,6 +21,7 @@ public class webDefinitions extends adv_initWebDriver {
     List<String> list_value;
     List<WebElement> list_element;
     List<WebElement> href_links;
+
     String str = "";
 
     /* Methods to work on WebDriver */
@@ -127,13 +128,22 @@ public class webDefinitions extends adv_initWebDriver {
         log.info ("Values from total links on webpage are stored as list of webelements with size of" + href_links.size ());
 
         for (WebElement href : href_links) {
-            //Write code to specify work on links e.g.Click or getAttribute.value
+            //Write code to specify action on links e.g.Click or getAttribute.value
             System.out.println (href.getText () + " represents url " + href.getAttribute ("href"));
         }
         return href_links;
     }
 
-    //javascripts
+    //Datatables
+    public void handleDatatables(String locate_rows, String locate_cols, By by){
 
+        List<WebElement> list_datatable_rows = driver.findElements (By.xpath (locate_rows));
+        List<WebElement> list_datatable_cols = driver.findElements (By.xpath (locate_cols));
 
+        for(WebElement element_row : list_datatable_rows){
+            for(WebElement element_col : list_datatable_cols){
+                //Write code to specify action on Datatable
+            }
+        }
+    }
 }
