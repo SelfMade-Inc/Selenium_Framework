@@ -47,7 +47,7 @@ public class adv_initWebDriver extends initLogs {
 
         switch (s) {
             case "Chrome" -> {
-                WebDriverManager.chromedriver().setup ();
+                WebDriverManager.chromedriver ().setup ();
                 driver = new ChromeDriver ();
                 log.info ("Google Chrome is being launched to Run the tests");
             }
