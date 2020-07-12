@@ -1,15 +1,22 @@
 package StepDefinitions;
 
+import org.apache.commons.io.FileUtils;
+import org.jetbrains.annotations.NotNull;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
+import ru.yandex.qatools.ashot.AShot;
+import ru.yandex.qatools.ashot.Screenshot;
+import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
 import utilities.adv_initWebDriver;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.time.Duration;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.stream.Collectors;
@@ -18,6 +25,7 @@ public class webDefinitions extends adv_initWebDriver {
 
     public static Actions action;
     public static Alert alert;
+    public static Date date;
     public static JavascriptExecutor js = (JavascriptExecutor) driver;
     public static WebDriverWait waits;
     public static WebElement block;
@@ -26,8 +34,6 @@ public class webDefinitions extends adv_initWebDriver {
     public static List<String> list_value;
     public static List<WebElement> list_element;
     public static List<WebElement> href_links;
-
-    String str = "";
 
     /* Methods to work on WebDriver */
 
@@ -88,6 +94,65 @@ public class webDefinitions extends adv_initWebDriver {
         js.executeScript ("arguments[0].style.border='3px solid red'", element);
         waits (5);
         //Call method action
+    }
+
+    /* Overloading method takeScreenshot */
+
+    //Screenshot webdriver screen
+    public static void takeScreenshot() throws IOException {
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs (OutputType.FILE);
+        String str = date.toString ().replace (":", "_").replace (" ", "_");
+        FileUtils.copyFile (screenshot, new File ("src\\screenshots\\scrshot_" + str + ".jpg"));
+    }
+
+    //Screenshot particular element post highlights
+    public static void takeScreenshot(By by) throws IOException {
+        element = driver.findElement (by);
+        setHighlighter (by);
+
+        String str = date.toString ().replace (":", "_").replace (" ", "_");
+
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs (OutputType.FILE);
+
+        //Helps manipulating images to capture elements dimensionally
+        BufferedImage img = ImageIO.read (screenshot);
+        Point point = element.getLocation ();
+        int element_height = element.getSize ().getHeight ();
+        int element_width = element.getSize ().getWidth ();
+
+        BufferedImage element_screenshot = img.getSubimage (point.getX (), point.getY (), element_width, element_height);
+        ImageIO.write (element_screenshot, "jpeg", screenshot);
+
+        File screenshot_location = new File (".\\screenshots\\element_scrshot" + str + ".jpg");
+        FileUtils.copyFile (screenshot, screenshot_location);
+    }
+
+    //Screenshot entire page scrolling to the end of the available webpage
+    public static void takeScreenshot(Integer scroll_timeperiod, By by, @NotNull String screenshot_level) throws IOException {
+
+        //Timestamping
+        String str = date.toString ().replace (":", "_").replace (" ", "_");
+
+       /*
+       call takeScreenshot(1000, webelement_locator, screen) to generate screenshot for entire page source
+
+       call takeScreenshot(1000, webelement_locator, element) to generate screenshot for selective element from page source
+       */
+
+        if (screenshot_level.equals ("screen")) {
+            //Generates screenshot with the specified scrolling period collecting the entire page on webdriver instance
+            Screenshot adv_screenshot = new AShot ().shootingStrategy (ShootingStrategies.viewportPasting (scroll_timeperiod)).takeScreenshot (driver);
+
+            //Writes the captured screenshot data to a specified file location
+            ImageIO.write (adv_screenshot.getImage (), "jpeg", new File ("src\\screenshots\\adv_scrshot_" + str + ".jpg"));
+        } else if (screenshot_level.equals ("element")) {
+
+            element = driver.findElement (by);
+            //Generates screenshot with the specified scrolling period collecting the selected element  on webdriver instance
+            Screenshot adv_screenshot = new AShot ().shootingStrategy (ShootingStrategies.viewportPasting (scroll_timeperiod)).takeScreenshot (driver, element);
+
+            ImageIO.write (adv_screenshot.getImage (), "jpg", new File ("src\\screenshots\\adv_scrshot_" + str + ".jpg"));
+        }
     }
 
     /* Overloading method waits to handle Implicit, Explicit and Fluent waits */
