@@ -1,4 +1,4 @@
-package StepDefinitions;
+package utilities;
 
 import org.apache.commons.io.FileUtils;
 import org.jetbrains.annotations.NotNull;
@@ -86,6 +86,8 @@ public class webDefinitions extends adv_initWebDriver {
         log.debug ("Total window handles available is " + windowHandles.size ());
     }
 
+
+
     /* Working with JAVAScript executor */
 
     //Highlighting elements to focus
@@ -95,6 +97,8 @@ public class webDefinitions extends adv_initWebDriver {
         waits (5);
         //Call method action
     }
+
+
 
     /* Overloading method takeScreenshot */
 
@@ -155,6 +159,8 @@ public class webDefinitions extends adv_initWebDriver {
         }
     }
 
+
+
     /* Overloading method waits to handle Implicit, Explicit and Fluent waits */
 
     //Call waits with number of seconds to implicitly wait
@@ -181,6 +187,9 @@ public class webDefinitions extends adv_initWebDriver {
         });
         log.debug ("WebDriver fluently waits for " + wait_time + " seconds");
     }
+
+
+
 
     /* Methods to read and store on WebElements */
 
@@ -308,5 +317,65 @@ public class webDefinitions extends adv_initWebDriver {
         String alert_message = alert.getText ();
         alert.accept ();
         log.debug (alert_message + " Alert received and accepted");
+    }
+
+    /* Jquery Calendars (tgt_date format is always DD/MM/YYYY)
+    * by_calendar = locator for the calendar
+    * by_move_back = locator for the backwards navigation of calendar
+    * by_move_fwd = locator for the forwards navigation of calendar
+    * */
+
+    public static void handleCalendars(String tgt_date, By by_calendar, By by_move_back, By by_move_fwd) {
+
+        int tgt_day = 0, tgt_month = 0, tgt_year = 0;
+        int curr_day = 0, curr_month = 0, curr_year = 0;
+        int jump_months_by = 0;
+        boolean increment = true;
+
+        //Get Current System date
+        Calendar cal = Calendar.getInstance ();
+        curr_day = cal.get (Calendar.DAY_OF_MONTH);
+        curr_month = cal.get (Calendar.MONTH);
+        curr_year = cal.get (Calendar.YEAR);
+
+        log.debug ("Date configured as Current date is " + curr_day + "/" + curr_month + "/" + curr_year);
+
+        //Get Target date from dateString
+        int firstIndex = tgt_date.indexOf ("/");
+        int lastIndex = tgt_date.lastIndexOf ("/");
+
+        //Typecasting provided DateString into dates
+        tgt_day = Integer.parseInt (tgt_date.substring (0, firstIndex));
+        tgt_month = Integer.parseInt (tgt_date.substring (firstIndex + 1, lastIndex));
+        tgt_year = Integer.parseInt (tgt_date.substring (lastIndex + 1, tgt_date.length ()));
+
+        log.debug ("Date configured as Target date is " + tgt_day + "/" + tgt_month + "/" + tgt_year);
+
+        //Calculating the Date jump from Current date to Target date
+        if (tgt_month - curr_month > 0) {
+            jump_months_by = tgt_month - curr_month;
+            log.info ("Target date is in the future");
+        } else {
+            jump_months_by = curr_month - tgt_month;
+            increment = false;
+            log.info ("Target date is in the past");
+        }
+
+        //WebDriver integration
+        waits (10);
+        driver.findElement (by_calendar).click ();
+
+        //Traverse from Current date to Target date
+        driver.findElement (By.linkText (Integer.toString (tgt_day)));
+
+        //Traverse from Current month to Target month
+        for (int i = 0 ;i < jump_months_by ;i++) {
+            if (increment) {
+                driver.findElement (by_move_fwd).click ();
+            } else {
+                driver.findElement (by_move_back).click ();
+            }
+            waits (10);
+        }
     }
 }
