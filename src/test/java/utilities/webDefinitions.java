@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.*;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
-import utilities.adv_initWebDriver;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -25,7 +24,7 @@ public class webDefinitions extends adv_initWebDriver {
 
     public static Actions action;
     public static Alert alert;
-    public static Date date;
+    public static Date date = new Date ();
     public static JavascriptExecutor js = (JavascriptExecutor) driver;
     public static WebDriverWait waits;
     public static WebElement block;
@@ -91,8 +90,7 @@ public class webDefinitions extends adv_initWebDriver {
     /* Working with JAVAScript executor */
 
     //Highlighting elements to focus
-    public static void setHighlighter(By by) {
-        element = driver.findElement (by);
+    public static void setHighlighter(WebElement element) {
         js.executeScript ("arguments[0].style.border='3px solid red'", element);
         waits (5);
         //Call method action
@@ -105,14 +103,15 @@ public class webDefinitions extends adv_initWebDriver {
     //Screenshot webdriver screen
     public static void takeScreenshot() throws IOException {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs (OutputType.FILE);
+
         String str = date.toString ().replace (":", "_").replace (" ", "_");
         FileUtils.copyFile (screenshot, new File ("src\\screenshots\\scrshot_" + str + ".jpg"));
     }
 
     //Screenshot particular element post highlights
-    public static void takeScreenshot(By by) throws IOException {
-        element = driver.findElement (by);
-        setHighlighter (by);
+    public static void takeScreenshot(WebElement element) throws IOException {
+
+        setHighlighter (element);
 
         String str = date.toString ().replace (":", "_").replace (" ", "_");
 
@@ -172,7 +171,8 @@ public class webDefinitions extends adv_initWebDriver {
     //Call waits with Element locator and number of seconds to explicitly wait
     public static void waits(WebElement elemLocator, Integer wait_time) {
         waits = new WebDriverWait (driver, wait_time);
-        waits.until (ExpectedConditions.presenceOfElementLocated ((By) elemLocator));
+
+        waits.until (ExpectedConditions.presenceOfElementLocated (extractLocator (elemLocator)));
         log.debug ("WebDriver explicitly waits for " + wait_time + " seconds");
     }
 
@@ -182,13 +182,54 @@ public class webDefinitions extends adv_initWebDriver {
 
         elemLocator = (WebElement) wait.until (new Function<WebDriver, WebElement> () {
             public WebElement apply(WebDriver driver) {
+
+
                 return driver.findElement (By.xpath ("elemLocator"));
             }
         });
         log.debug ("WebDriver fluently waits for " + wait_time + " seconds");
     }
 
+    //Type casting Webelement to a By locator string
+    public static By extractLocator(WebElement element) {
 
+        By by = null;
+
+        String[] pathVariables = (element.toString ().split ("->")[1].replaceFirst ("(?s)(.*)\\]", "$1" + "")).split (":");
+
+        String selector = pathVariables[0].trim ();
+        String value = pathVariables[1].trim ();
+
+        switch (selector) {
+            case "id":
+                by = By.id (value);
+                break;
+            case "className":
+                by = By.className (value);
+                break;
+            case "tagName":
+                by = By.tagName (value);
+                break;
+            case "xpath":
+                by = By.xpath (value);
+                break;
+            case "cssSelector":
+                by = By.cssSelector (value);
+                break;
+            case "linkText":
+                by = By.linkText (value);
+                break;
+            case "name":
+                by = By.name (value);
+                break;
+            case "partialLinkText":
+                by = By.partialLinkText (value);
+                break;
+            default:
+                throw new IllegalStateException ("locator : " + selector + " not found!!!");
+        }
+        return by;
+    }
 
 
     /* Methods to read and store on WebElements */
@@ -320,10 +361,10 @@ public class webDefinitions extends adv_initWebDriver {
     }
 
     /* Jquery Calendars (tgt_date format is always DD/MM/YYYY)
-    * by_calendar = locator for the calendar
-    * by_move_back = locator for the backwards navigation of calendar
-    * by_move_fwd = locator for the forwards navigation of calendar
-    * */
+     * by_calendar = locator for the calendar
+     * by_move_back = locator for the backwards navigation of calendar
+     * by_move_fwd = locator for the forwards navigation of calendar
+     * */
 
     public static void handleCalendars(String tgt_date, By by_calendar, By by_move_back, By by_move_fwd) {
 
