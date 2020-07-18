@@ -64,17 +64,17 @@ public class EverythingExcel {
             for (Row row_index : sheet) {
                 for (Cell cell_index : row_index) {
                     switch (cell_index.getCellType ()) {
-                        case Cell.CELL_TYPE_STRING:
+                        case STRING:
                             System.out.println (cell_index.getStringCellValue ());
-                        case Cell.CELL_TYPE_BLANK:
+                        case BLANK:
                             System.out.println ("Blank Cell located");
-                        case Cell.CELL_TYPE_BOOLEAN:
+                        case BOOLEAN:
                             System.out.println (cell_index.getBooleanCellValue ());
-                        case Cell.CELL_TYPE_ERROR:
+                        case ERROR:
                             System.out.println (cell_index.getErrorCellValue ());
-                        case Cell.CELL_TYPE_NUMERIC:
+                        case NUMERIC:
                             System.out.println (cell_index.getNumericCellValue ());
-                        case Cell.CELL_TYPE_FORMULA:
+                        case FORMULA:
                             System.out.println (cell_index.getCellFormula ());
                     }
                 }

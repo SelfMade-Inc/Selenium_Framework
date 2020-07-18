@@ -134,9 +134,9 @@ public class webDefinitions extends adv_initWebDriver {
         String str = date.toString ().replace (":", "_").replace (" ", "_");
 
        /*
-       call takeScreenshot(1000, webelement_locator, screen) to generate screenshot for entire page source
+       takeScreenshot(1000, webelement_locator, screen) to generate screenshot for entire page source
 
-       call takeScreenshot(1000, webelement_locator, element) to generate screenshot for selective element from page source
+       takeScreenshot(1000, webelement_locator, element) to generate screenshot for selective element from page source
        */
 
         if (screenshot_level.equals ("screen")) {
