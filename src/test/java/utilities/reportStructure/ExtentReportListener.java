@@ -7,6 +7,7 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
+import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
@@ -69,6 +70,33 @@ public class ExtentReportListener implements ITestListener {
         String failureLog = "TEST CASE FAILED";
         Markup report_decor = MarkupHelper.createLabel (failureLog, ExtentColor.RED);
         testReport.get ().log (Status.FAIL, report_decor);
+
+    }
+
+    public void onTestSkipped(ITestResult iTestResult) {
+
+        String methodName = iTestResult.getMethod().getMethodName();
+
+        String logText="<b>"+"Test Case:- "+ methodName+ " Skipped"+"</b>";
+        Markup report_decor = MarkupHelper.createLabel(logText, ExtentColor.BLUE);
+
+        testReport.get().skip(report_decor);
+
+        //to highlight in the Extent report
+        //testReport.get ().log (Status.SKIP, report_decor);
+    }
+
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+
+    }
+
+    public void onStart(ITestContext context) {
+
+    }
+
+    public void onFinish(ITestContext context) {
+
+        if (extentReport != null)  extentReport.flush();
 
     }
 }
