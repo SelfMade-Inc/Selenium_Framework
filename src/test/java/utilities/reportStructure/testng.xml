@@ -4,14 +4,14 @@
 
     <listeners>
 
-        <listener class-name="utilities.reportStructure.ExtentReportListener" />
+        <listener class-name="utilities.reportStructure.ExtentReportListener"/>
 
     </listeners>
 
     <test name="Test">
 
         <classes>
-            <class name="Testcases.ReportTrial" />
+            <class name="Testcases.ReportTrial"/>
         </classes>
 
     </test> <!-- Test -->

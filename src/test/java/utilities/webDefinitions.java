@@ -1,7 +1,7 @@
 package utilities;
 
 import org.apache.commons.io.FileUtils;
-import org.jetbrains.annotations.*;
+import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
@@ -22,6 +22,8 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class webDefinitions extends adv_initWebDriver {
+
+    /* SELENIUM 3.*.* and below support */
 
     public static Actions action;
     public static Alert alert;
@@ -114,7 +116,11 @@ public class webDefinitions extends adv_initWebDriver {
 
         setHighlighter (element);
 
+        /* Selenium 3.*.* and below required this approach */
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs (OutputType.FILE);
+
+        /* Selenium 4.*.* and above requires this approach */
+        //File screenshot = ((TakesScreenshot) element).getScreenshotAs (OutputType.FILE);
 
         //Helps manipulating images to capture elements dimensionally
         BufferedImage img = ImageIO.read (screenshot);
@@ -127,6 +133,7 @@ public class webDefinitions extends adv_initWebDriver {
 
         File screenshot_location = new File (".\\screenshots\\element_scrshot" + timestamp + ".jpg");
         FileUtils.copyFile (screenshot, screenshot_location);
+
     }
 
     //Screenshot entire page scrolling to the end of the available webpage
@@ -218,34 +225,18 @@ public class webDefinitions extends adv_initWebDriver {
         String selector = pathVariables[0].trim ();
         String value = pathVariables[1].trim ();
 
-        switch (selector) {
-            case "id":
-                by = By.id (value);
-                break;
-            case "className":
-                by = By.className (value);
-                break;
-            case "tagName":
-                by = By.tagName (value);
-                break;
-            case "xpath":
-                by = By.xpath (value);
-                break;
-            case "cssSelector":
-                by = By.cssSelector (value);
-                break;
-            case "linkText":
-                by = By.linkText (value);
-                break;
-            case "name":
-                by = By.name (value);
-                break;
-            case "partialLinkText":
-                by = By.partialLinkText (value);
-                break;
-            default:
-                throw new IllegalStateException ("locator : " + selector + " not found!!!");
-        }
+        by = switch (selector) {
+            case "id" -> By.id (value);
+            case "className" -> By.className (value);
+            case "tagName" -> By.tagName (value);
+            case "xpath" -> By.xpath (value);
+            case "cssSelector" -> By.cssSelector (value);
+            case "linkText" -> By.linkText (value);
+            case "name" -> By.name (value);
+            case "partialLinkText" -> By.partialLinkText (value);
+            default -> throw new IllegalStateException ("locator : " + selector + " not found!!!");
+        };
+
         return by;
     }
 

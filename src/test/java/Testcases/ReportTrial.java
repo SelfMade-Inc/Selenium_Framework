@@ -2,20 +2,20 @@ package Testcases;
 
 import org.testng.Assert;
 import org.testng.SkipException;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 public class ReportTrial {
 
     @Test
     public void doLogin() {
 
-        System.out.println("Executing Login Test");
+        System.out.println ("Executing Login Test");
     }
 
     @Test
     public void doUserReg() {
 
-        Assert.fail("User Reg Test Failed");
+        Assert.fail ("User Reg Test Failed");
     }
 
     @Test

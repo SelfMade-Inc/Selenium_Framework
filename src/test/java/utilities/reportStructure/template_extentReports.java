@@ -125,6 +125,9 @@ public class template_extentReports {
                 Markup report_decor = MarkupHelper.createLabel (logger, ExtentColor.GREEN);
                 extentTest.pass (report_decor);
             }
+            break;
+            default:
+                throw new IllegalStateException ("Unexpected value: " + test_result.getStatus ());
         }
     }
 }

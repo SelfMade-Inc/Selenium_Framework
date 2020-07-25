@@ -75,12 +75,12 @@ public class ExtentReportListener implements ITestListener {
 
     public void onTestSkipped(ITestResult iTestResult) {
 
-        String methodName = iTestResult.getMethod().getMethodName();
+        String methodName = iTestResult.getMethod ().getMethodName ();
 
-        String logText="<b>"+"Test Case:- "+ methodName+ " Skipped"+"</b>";
-        Markup report_decor = MarkupHelper.createLabel(logText, ExtentColor.BLUE);
+        String logText = "<b>" + "Test Case:- " + methodName + " Skipped" + "</b>";
+        Markup report_decor = MarkupHelper.createLabel (logText, ExtentColor.BLUE);
 
-        testReport.get().skip(report_decor);
+        testReport.get ().skip (report_decor);
 
         //to highlight in the Extent report
         //testReport.get ().log (Status.SKIP, report_decor);
@@ -96,7 +96,7 @@ public class ExtentReportListener implements ITestListener {
 
     public void onFinish(ITestContext context) {
 
-        if (extentReport != null)  extentReport.flush();
+        if (extentReport != null) extentReport.flush ();
 
     }
 }
