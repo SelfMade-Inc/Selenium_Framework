@@ -6,7 +6,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import utilities.adv_initWebDriver;
+import utilities.initializers.adv_initWebDriver;
 
 import java.io.IOException;
 

@@ -1,4 +1,4 @@
-package utilities;
+package utilities.initializers;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.logging.log4j.LogManager;

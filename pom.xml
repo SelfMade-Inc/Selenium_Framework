@@ -87,6 +87,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!--JUnit is a regression testing framework. It is used by the developer who implements unit tests in Java-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+
         <!--Cucumber JVM Repackaged Dependencies-->
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
         <dependency>
@@ -117,14 +124,6 @@
             <groupId>io.cucumber</groupId>
             <artifactId>gherkin</artifactId>
             <version>5.1.0</version>
-        </dependency>
-
-        <!--Below dependency is used to get Junit jar files-->
-        <!--JUnit is a regression testing framework. It is used by the developer who implements unit tests in Java-->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
         </dependency>
 
         <!--Log4j and related jar files for Project level logs-->
@@ -278,6 +277,23 @@
             <groupId>ru.yandex.qatools.ashot</groupId>
             <artifactId>ashot</artifactId>
             <version>1.5.4</version>
+        </dependency>
+
+        <!-- Extent reports and related dependencies -->
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.0.9</version>
+        </dependency>
+
+        <!-- Testing framework for Java -->
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.1.0</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

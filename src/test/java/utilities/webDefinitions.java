@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.*;
 import ru.yandex.qatools.ashot.AShot;
 import ru.yandex.qatools.ashot.Screenshot;
 import ru.yandex.qatools.ashot.shooting.ShootingStrategies;
+import utilities.initializers.adv_initWebDriver;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -24,7 +25,7 @@ public class webDefinitions extends adv_initWebDriver {
 
     public static Actions action;
     public static Alert alert;
-    public static Date date = new Date ();
+
     public static JavascriptExecutor js = (JavascriptExecutor) driver;
     public static WebDriverWait waits;
     public static WebElement block;
@@ -34,9 +35,12 @@ public class webDefinitions extends adv_initWebDriver {
     public static List<WebElement> list_element;
     public static List<WebElement> href_links;
 
+    public static Date date = new Date ();
+    public static String timestamp = date.toString ().replace (":", "_").replace (" ", "_");
+
     /* Methods to work on WebDriver */
 
-    //Checking presence of single webelement at a time
+    //Checking presence of single WebElement at a time
     public static boolean isElementPresent(By by) {
         try {
             driver.findElement (by);
@@ -48,7 +52,7 @@ public class webDefinitions extends adv_initWebDriver {
         }
     }
 
-    //Checking presence of multiple webelements
+    //Checking presence of multiple WebElements
     public static boolean areElementsPresent(By by) {
 
         //Declare block to read elements from
@@ -63,7 +67,7 @@ public class webDefinitions extends adv_initWebDriver {
     }
 
     //Frames
-    public static void workwithFrames(String frame_locator, String element_locator) {
+    public static void manageFrames(String frame_locator, String element_locator) {
         driver.switchTo ().frame (frame_locator);
         list_element = driver.findElements (By.id (frame_locator));
 
@@ -86,7 +90,6 @@ public class webDefinitions extends adv_initWebDriver {
     }
 
 
-
     /* Working with JAVAScript executor */
 
     //Highlighting elements to focus
@@ -97,23 +100,19 @@ public class webDefinitions extends adv_initWebDriver {
     }
 
 
-
     /* Overloading method takeScreenshot */
 
-    //Screenshot webdriver screen
+    //Screenshot WebDriver screen
     public static void takeScreenshot() throws IOException {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs (OutputType.FILE);
 
-        String str = date.toString ().replace (":", "_").replace (" ", "_");
-        FileUtils.copyFile (screenshot, new File ("src\\screenshots\\scrshot_" + str + ".jpg"));
+        FileUtils.copyFile (screenshot, new File ("src\\screenshots\\scrshot_" + timestamp + ".jpg"));
     }
 
-    //Screenshot particular element post highlights
+    //Screenshot particular element
     public static void takeScreenshot(WebElement element) throws IOException {
 
         setHighlighter (element);
-
-        String str = date.toString ().replace (":", "_").replace (" ", "_");
 
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs (OutputType.FILE);
 
@@ -126,20 +125,17 @@ public class webDefinitions extends adv_initWebDriver {
         BufferedImage element_screenshot = img.getSubimage (point.getX (), point.getY (), element_width, element_height);
         ImageIO.write (element_screenshot, "jpeg", screenshot);
 
-        File screenshot_location = new File (".\\screenshots\\element_scrshot" + str + ".jpg");
+        File screenshot_location = new File (".\\screenshots\\element_scrshot" + timestamp + ".jpg");
         FileUtils.copyFile (screenshot, screenshot_location);
     }
 
     //Screenshot entire page scrolling to the end of the available webpage
     public static void takeScreenshot(Integer scroll_timeperiod, By by, @NotNull String screenshot_level) throws IOException {
 
-        //Timestamping
-        String str = date.toString ().replace (":", "_").replace (" ", "_");
-
        /*
-       takeScreenshot(1000, webelement_locator, screen) to generate screenshot for entire page source
+       takeScreenshot(1000, WebElement_locator, screen) to generate screenshot for entire page source
 
-       takeScreenshot(1000, webelement_locator, element) to generate screenshot for selective element from page source
+       takeScreenshot(1000, WebElement_locator, element) to generate screenshot for selective element from page source
        */
 
         if (screenshot_level.equals ("screen")) {
@@ -147,17 +143,39 @@ public class webDefinitions extends adv_initWebDriver {
             Screenshot adv_screenshot = new AShot ().shootingStrategy (ShootingStrategies.viewportPasting (scroll_timeperiod)).takeScreenshot (driver);
 
             //Writes the captured screenshot data to a specified file location
-            ImageIO.write (adv_screenshot.getImage (), "jpeg", new File ("src\\screenshots\\adv_scrshot_" + str + ".jpg"));
+            ImageIO.write (adv_screenshot.getImage (), "jpeg", new File ("src\\screenshots\\page_scrshot_" + timestamp + ".jpg"));
+
         } else if (screenshot_level.equals ("element")) {
 
-            element = driver.findElement (by);
+            element = driver.findElement (extractLocator (element));
+
             //Generates screenshot with the specified scrolling period collecting the selected element  on webdriver instance
             Screenshot adv_screenshot = new AShot ().shootingStrategy (ShootingStrategies.viewportPasting (scroll_timeperiod)).takeScreenshot (driver, element);
 
-            ImageIO.write (adv_screenshot.getImage (), "jpg", new File ("src\\screenshots\\adv_scrshot_" + str + ".jpg"));
+            ImageIO.write (adv_screenshot.getImage (), "jpg", new File ("src\\screenshots\\adv_scrshot_" + timestamp + ".jpg"));
         }
     }
 
+    //Get screenshot location to attach into reports or emails
+    public static String getScreenshot() throws Exception {
+
+        File screenshot = ((TakesScreenshot) driver).getScreenshotAs (OutputType.FILE);
+        String screenshotName = screenshot.getName ();
+        String destination = "";
+
+        if (screenshotName.isEmpty ()) {
+            log.error ("Screenshot for failed scenario not generated");
+        } else {
+
+            destination = System.getProperty ("user.dir") + "/FailedScenarios/" + screenshotName + timestamp + ".jpg";
+
+            File finalDestination = new File (destination);
+            FileUtils.copyFile (screenshot, finalDestination);
+
+        }
+        //Returns the captured file path
+        return destination;
+    }
 
 
     /* Overloading method waits to handle Implicit, Explicit and Fluent waits */
@@ -190,7 +208,7 @@ public class webDefinitions extends adv_initWebDriver {
         log.debug ("WebDriver fluently waits for " + wait_time + " seconds");
     }
 
-    //Type casting Webelement to a By locator string
+    //Type casting WebElement to a By locator string
     public static By extractLocator(WebElement element) {
 
         By by = null;
@@ -230,7 +248,6 @@ public class webDefinitions extends adv_initWebDriver {
         }
         return by;
     }
-
 
     /* Methods to read and store on WebElements */
 
