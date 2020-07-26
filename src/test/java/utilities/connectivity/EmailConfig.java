@@ -1,4 +1,4 @@
-package utilities;
+package utilities.connectivity;
 
 import javax.mail.*;
 import javax.mail.internet.*;

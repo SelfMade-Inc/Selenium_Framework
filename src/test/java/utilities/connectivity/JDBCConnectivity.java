@@ -1,4 +1,4 @@
-package utilities;
+package utilities.connectivity;
 
 import java.sql.*;
 import java.util.ArrayList;

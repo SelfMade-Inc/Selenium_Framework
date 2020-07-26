@@ -1,4 +1,4 @@
-package utilities;
+package utilities.connectivity;
 
 public class ConnectivityConfig {
 

@@ -87,6 +87,13 @@
             <scope>test</scope>
         </dependency>
 
+        <!--JUnit is a regression testing framework. It is used by the developer who implements unit tests in Java-->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+        </dependency>
+
         <!--Cucumber JVM Repackaged Dependencies-->
         <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-jvm-deps -->
         <dependency>
@@ -104,20 +111,19 @@
             <version>5.3.0</version>
         </dependency>
 
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.1.7</version>
+        </dependency>
+
         <!--Gherkins language interpreting-->
         <!-- https://mvnrepository.com/artifact/io.cucumber/gherkin -->
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>gherkin</artifactId>
             <version>5.1.0</version>
-        </dependency>
-
-        <!--Below dependency is used to get Junit jar files-->
-        <!--JUnit is a regression testing framework. It is used by the developer who implements unit tests in Java-->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>4.12</version>
         </dependency>
 
         <!--Log4j and related jar files for Project level logs-->
@@ -170,12 +176,12 @@
             <version>4.1.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi</artifactId>
-            <version>3.17</version>
-        </dependency>
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.poi/poi &ndash;&gt;
+                <dependency>
+                    <groupId>org.apache.poi</groupId>
+                    <artifactId>poi</artifactId>
+                    <version>3.17</version>
+                </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
         <dependency>
@@ -184,12 +190,12 @@
             <version>4.1.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>3.17</version>
-        </dependency>
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml &ndash;&gt;
+                <dependency>
+                    <groupId>org.apache.poi</groupId>
+                    <artifactId>poi-ooxml</artifactId>
+                    <version>3.17</version>
+                </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
         <dependency>
@@ -198,12 +204,12 @@
             <version>4.1.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml-schemas</artifactId>
-            <version>3.17</version>
-        </dependency>
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml-schemas &ndash;&gt;
+                <dependency>
+                    <groupId>org.apache.poi</groupId>
+                    <artifactId>poi-ooxml-schemas</artifactId>
+                    <version>3.17</version>
+                </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-excelant -->
         <dependency>
@@ -212,12 +218,12 @@
             <version>4.1.1</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.poi/poi-excelant -->
-        <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-excelant</artifactId>
-            <version>3.17</version>
-        </dependency>
+        <!--        &lt;!&ndash; https://mvnrepository.com/artifact/org.apache.poi/poi-excelant &ndash;&gt;
+                <dependency>
+                    <groupId>org.apache.poi</groupId>
+                    <artifactId>poi-excelant</artifactId>
+                    <version>3.17</version>
+                </dependency>-->
 
         <!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
         <dependency>
@@ -231,13 +237,6 @@
             <groupId>org.apache.xmlbeans</groupId>
             <artifactId>xmlbeans</artifactId>
             <version>3.1.0</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/dom4j/dom4j -->
-        <dependency>
-            <groupId>dom4j</groupId>
-            <artifactId>dom4j</artifactId>
-            <version>1.6.1</version>
         </dependency>
 
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
@@ -270,6 +269,31 @@
             <groupId>io.github.bonigarcia</groupId>
             <artifactId>webdrivermanager</artifactId>
             <version>3.8.1</version>
+        </dependency>
+
+        <!-- Screenshot API to enable entire Page resource screen capture -->
+        <!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
+        <dependency>
+            <groupId>ru.yandex.qatools.ashot</groupId>
+            <artifactId>ashot</artifactId>
+            <version>1.5.4</version>
+        </dependency>
+
+        <!-- Extent reports and related dependencies -->
+        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <dependency>
+            <groupId>com.aventstack</groupId>
+            <artifactId>extentreports</artifactId>
+            <version>4.0.9</version>
+        </dependency>
+
+        <!-- Testing framework for Java -->
+        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>7.1.0</version>
+            <scope>test</scope>
         </dependency>
 
     </dependencies>

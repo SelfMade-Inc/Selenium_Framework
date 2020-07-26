@@ -1,4 +1,4 @@
-package utilities;
+package utilities.initializers;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
@@ -17,7 +17,7 @@ public class adv_initWebDriver extends initLogs {
     public static WebDriver driver;
     public static String url;
 
-    public static void main(String[] args) throws IOException {
+    public static void setupWebDriver() throws IOException {
 
         Properties prop = new Properties ();
         FileInputStream ip_stream = null;
@@ -30,15 +30,15 @@ public class adv_initWebDriver extends initLogs {
         prop.load (ip_stream);
 
         //Read config settings
-        String browserName = prop.getProperty ("BrowserName");
+        String browserName = prop.getProperty ("browserName");
         url = prop.getProperty ("url");
 
         //Call browser method with the config setting for browser name
         setDriver (browserName);
 
         //Load URL
-        driver.manage ().window ().maximize ();
         driver.get (url);
+        driver.manage ().window ().maximize ();
         log.info ("Requested URL is launched");
 
     }
@@ -47,7 +47,7 @@ public class adv_initWebDriver extends initLogs {
 
         switch (s) {
             case "Chrome" -> {
-                WebDriverManager.chromedriver().setup ();
+                WebDriverManager.chromedriver ().setup ();
                 driver = new ChromeDriver ();
                 log.info ("Google Chrome is being launched to Run the tests");
             }
