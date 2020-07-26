@@ -44,11 +44,11 @@ public class webDefinitions_SelV4 {
         driver.manage ().timeouts ().implicitlyWait (10, TimeUnit.SECONDS);
 
         System.out.println ("This is the initialisation of 2nd Window");
-        getWindowHandles();
+        getWindowHandles ();
 
     }
 
-    public static void getWindowHandles(){
+    public static void getWindowHandles() {
 
         Set<String> window_handles = driver.getWindowHandles ();
         Iterator<String> iterator = window_handles.iterator ();

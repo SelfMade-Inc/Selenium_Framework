@@ -43,7 +43,7 @@ public class EverythingExcel {
     /*
     UpdatedReadExcel is for Repo files older than ver4.*.* and ReadExcel is for Repo files before 4.*.*
     */
-    //No nonsense no parameter crude ReadExcel
+    //No parameter crude ReadExcel
     public void ReadExcel() throws IOException {
        /*
         Apache POI & JExcel POI = JAVA API used to handle .xls and .xlsx files
