@@ -1,6 +1,8 @@
-Feature: To land on testing home page
+Feature: Navigate to Home page
+  User should be able to Navigate to the main Home page and verify it
 
-  Scenario: To land on testing home page
+  Scenario: Navigate to main home page
     Given Should be able to land on home page
-    When Okay
-    Then Good
+    When User is able to locate the desired Webpage to test
+    And Begin Validating desired Webpage for Testable elements
+

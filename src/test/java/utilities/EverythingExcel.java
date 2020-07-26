@@ -43,7 +43,7 @@ public class EverythingExcel {
     /*
     UpdatedReadExcel is for Repo files older than ver4.*.* and ReadExcel is for Repo files before 4.*.*
     */
-    //No nonsense no parameter crude ReadExcel
+    //No parameter crude ReadExcel
     public void ReadExcel() throws IOException {
        /*
         Apache POI & JExcel POI = JAVA API used to handle .xls and .xlsx files
@@ -64,17 +64,17 @@ public class EverythingExcel {
             for (Row row_index : sheet) {
                 for (Cell cell_index : row_index) {
                     switch (cell_index.getCellType ()) {
-                        case Cell.CELL_TYPE_STRING:
+                        case STRING:
                             System.out.println (cell_index.getStringCellValue ());
-                        case Cell.CELL_TYPE_BLANK:
+                        case BLANK:
                             System.out.println ("Blank Cell located");
-                        case Cell.CELL_TYPE_BOOLEAN:
+                        case BOOLEAN:
                             System.out.println (cell_index.getBooleanCellValue ());
-                        case Cell.CELL_TYPE_ERROR:
+                        case ERROR:
                             System.out.println (cell_index.getErrorCellValue ());
-                        case Cell.CELL_TYPE_NUMERIC:
+                        case NUMERIC:
                             System.out.println (cell_index.getNumericCellValue ());
-                        case Cell.CELL_TYPE_FORMULA:
+                        case FORMULA:
                             System.out.println (cell_index.getCellFormula ());
                     }
                 }

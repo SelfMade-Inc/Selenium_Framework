@@ -1,6 +1,6 @@
 package Testcases;
 
-import utilities.adv_initWebDriver;
+import utilities.initializers.adv_initWebDriver;
 
 import java.io.IOException;
 

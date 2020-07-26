@@ -1,4 +1,4 @@
-package utilities;
+package utilities.initializers;
 
 import org.apache.log4j.PropertyConfigurator;
 import org.apache.logging.log4j.LogManager;
@@ -18,7 +18,7 @@ public class initLogs {
         //Fetch log4j.properties file for layouts
         PropertyConfigurator.configure ("src/main/resources/log4j_prop.properties");
 
-        //Timestamping and setting Date format to be acceptable by File Explorer
+        //TimeStamping and setting Date format to be acceptable by File Explorer
         Date curr_date = new Date ();
         System.setProperty ("current.date", curr_date.toString ().replace (":", "_").replace (" ", "_"));
 

@@ -1,0 +1,39 @@
+<b> Bash Commands </b>
+
+** Run command to register machine as hub
+java -jar selenium-server-standalone-2.53.0.jar -role hub
+
+
+** Run command to register machines as nodes
+** This command registers node with 5 sessions of Chrome & Firefox and 1 session of IE
+java -jar selenium-server-standalone-2.53.0.jar -role webdriver -hub http:// <node machine IP> :4444/grid/register -port < desired port >
+
+
+** To configure webdrivers onto the node
+java `-Dwebdriver.<chrome / ie>.driver=< Location of the webdriver executable > -jar selenium-server-standalone-2.53.0.jar -role webdriver -hub http:// <node machine IP> :4444/grid/register -port < desired port >
+
+
+** Add -browser browserName= < desired browser name > to node command to add 1 session of specified browser
+-browser browserName= < desired browser name >
+
+** To add instances of a particular browser :: max instances of any browser are 5
+ -browser browserName= < desired browser name >, maxInstances= < 1 to 5 >
+
+** To change maxSessions of a particular browser
+-browser browserName= < desired browser name >, maxInstances= < 1 to 5 >, maxSession < 1 to 5 >
+
+
+
+<b> Bash Commands for JSON</b>
+
+** Run command to register machine as hub using JSON config
+java -jar selenium-server-standalone-2.41.0.jar -role hub –hubConfig grid_hub.json
+
+
+** Run command to register machines as nodes using JSON config
+java -jar selenium-server-standalone-2.41.0.jar -role rc –nodeConfig grid_node.json
+
+** To specify browser versions into the JSON node config
+{
+   “browserName”: “chrome”,”version”:”8”,”platform”:”Windows”
+}
